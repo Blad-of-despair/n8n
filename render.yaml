@@ -1,13 +1,14 @@
 services:
   - type: web
     name: n8n
-    runtime: docker
-    branch: master
+    env: docker
     plan: free
+    branch: master
+    healthCheckPath: /
     envVars:
       - key: N8N_BASIC_AUTH_ACTIVE
         value: "true"
       - key: N8N_BASIC_AUTH_USER
-        value: "your-username"
+        value: "admin"
       - key: N8N_BASIC_AUTH_PASSWORD
-        value: "your-password"
+        value: "yourStrongPassword"
